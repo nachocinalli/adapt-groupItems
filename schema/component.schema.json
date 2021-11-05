@@ -1,0 +1,169 @@
+{
+  "$anchor": "groupItems-component",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "$merge": {
+    "source": {
+      "$ref": "component"
+    },
+    "with": {
+      "properties": {
+        "_supportedLayout": {
+          "type": "string",
+          "title": "Supported layout",
+          "default": "full-width",
+          "enum": ["full-width", "half-width", "both"],
+          "_adapt": {
+            "editorOnly": true
+          }
+        },
+        "instruction": {
+          "type": "string",
+          "title": "Instruction",
+          "default": "",
+          "_adapt": {
+            "translatable": true
+          }
+        },
+        "_setCompletionOn": {
+          "type": "string",
+          "title": "Completion criteria",
+          "description": "Whether completion is based on the learner having viewed all the items - or just having viewed the component",
+          "default": "allItems",
+          "enum": ["inview", "allItems"],
+          "_backboneForms": "Select"
+        },
+        "_groupActive": {
+          "type": "number",
+          "title": "Group active",
+          "description": "Set initial state. Use 1 to the first group.",
+          "default": 1
+        },
+        "_groups": {
+          "type": "array",
+          "title": "Groups",
+          "items": {
+            "type": "object",
+            "properties": {
+              "title": {
+                "type": "string",
+                "title": "Group title",
+                "default": "",
+                "_adapt": {
+                  "translatable": true
+                }
+              },
+              "_icon": {
+                "type": "object",
+                "title": "Icon",
+                "default": {},
+                "properties": {
+                  "alt": {
+                    "type": "string",
+                    "title": "Alternative text",
+                    "description": "A description of the image",
+                    "default": "",
+                    "_adapt": {
+                      "translatable": true
+                    }
+                  },
+                  "src": {
+                    "type": "string",
+                    "isObjectId": true,
+                    "title": "Source",
+                    "description": "Optional image which will be rendered with the item",
+                    "_backboneForms": {
+                      "type": "Asset",
+                      "media": "image"
+                    }
+                  },
+                  "_classes": {
+                    "type": "string",
+                    "title": "Custom classes",
+                    "description": "Custom classes that are applied to the icon.",
+                    "default": ""
+                  }
+                }
+              }
+            }
+          }
+        },
+        "_items": {
+          "type": "array",
+          "title": "Items",
+          "items": {
+            "type": "object",
+            "properties": {
+              "_group": {
+                "type": "number",
+                "title": "Group",
+                "description": "Group ref.",
+                "default": 1
+              },
+              "title": {
+                "type": "string",
+                "title": "Item title",
+                "default": "",
+                "_adapt": {
+                  "translatable": true
+                }
+              },
+              "body": {
+                "type": "string",
+                "title": "Item body",
+                "description": "This is the item body text",
+                "default": "",
+                "_adapt": {
+                  "translatable": true
+                },
+                "_backboneForms": "TextArea"
+              },
+              "_graphic": {
+                "type": "object",
+                "title": "Graphic",
+                "default": {},
+                "properties": {
+                  "alt": {
+                    "type": "string",
+                    "title": "Alternative text",
+                    "description": "A description of the image",
+                    "default": "",
+                    "_adapt": {
+                      "translatable": true
+                    }
+                  },
+                  "large": {
+                    "type": "string",
+                    "isObjectId": true,
+                    "title": "Large",
+                    "description": "The large sized image for desktop devices",
+                    "_backboneForms": {
+                      "type": "Asset",
+                      "media": "image"
+                    }
+                  },
+                  "small": {
+                    "type": "string",
+                    "isObjectId": true,
+                    "title": "Small",
+                    "description": "The small sized image for mobile devices",
+                    "_backboneForms": {
+                      "type": "Asset",
+                      "media": "image"
+                    }
+                  }
+                }
+              },
+              "_classes": {
+                "type": "string",
+                "title": "Custom classes",
+                "description": "Custom classes that are applied to the item",
+                "default": ""
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

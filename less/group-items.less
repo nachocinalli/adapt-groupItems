@@ -1,0 +1,29 @@
+.groupitems {
+  &__container-groups {
+    display: flex;
+    margin-bottom: 1rem;
+  }
+  &__group {
+    margin-right: 1rem;
+    &.is-active {
+      background-color: @black;
+      color: @white;
+    }
+  }
+  &__container-items {
+    display: flex;
+    flex-direction: column;
+  }
+  &__item {
+    display: none;
+    margin-right: 1rem;
+    &.is-active {
+      display: block;
+    }
+  }
+  @media (min-width: @device-width-large) {
+    &__container-items {
+      flex-direction: row;
+    }
+  }
+}

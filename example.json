@@ -1,0 +1,101 @@
+{
+  "_id": "c-05",
+  "_parentId": "b-05",
+  "_type": "component",
+  "_component": "groupItems",
+  "_classes": "",
+  "_layout": "full",
+  "title": "Group Items",
+  "displayTitle": "Group Items",
+  "body": "This is optional body text.",
+  "instruction": "This is the instruction text.",
+  "_setCompletionOn": "allItems",
+  "_groupActive": 1,
+  "_groups": [
+    {
+      "title": "Group 1",
+      "_icon": {
+        "src": "",
+        "_classes": "",
+        "alt": ""
+      }
+    },
+    {
+      "title": "Group 2",
+
+      "_icon": {
+        "src": "",
+        "_classes": "",
+        "alt": ""
+      },
+      "_graphic": {
+        "src": "",
+        "alt": ""
+      }
+    },
+    {
+      "title": "Group 3",
+      "_icon": {
+        "src": "",
+        "_classes": "",
+        "alt": ""
+      }
+    }
+  ],
+  "_items": [
+    {
+      "_group": 1,
+      "title": "Item 1-1",
+      "body": "This is display text",
+      "_graphic": {
+        "src": "",
+        "alt": ""
+      }
+    },
+    {
+      "_group": 1,
+      "title": "Item 1-2",
+      "body": "This is display text",
+      "_graphic": {
+        "src": "",
+        "alt": ""
+      }
+    },
+    {
+      "_group": 1,
+      "title": "Item 1-3",
+      "body": "This is display text",
+      "_graphic": {
+        "src": "",
+        "alt": ""
+      }
+    },
+    {
+      "_group": 2,
+      "title": "Item 2-1",
+      "body": "This is display text",
+      "_graphic": {
+        "src": "",
+        "alt": ""
+      }
+    },
+    {
+      "_group": 2,
+      "title": "Item 2-2",
+      "body": "This is display text",
+      "_graphic": {
+        "src": "",
+        "alt": ""
+      }
+    },
+    {
+      "_group": 3,
+      "title": "Item 3-1",
+      "body": "This is display text",
+      "_graphic": {
+        "src": "",
+        "alt": ""
+      }
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "name": "adapt-groupItems",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/nachocinalli/adapt-groupItems.git"
+  },
+  "framework": ">=5.14.0",
+  "version": "1.0.0",
+  "homepage": "https://github.com/nachocinalli/adapt-groupItems",
+  "issues": "https://github.com/nachocinalli/adapt-groupItems/issues",
+  "component": "groupItems",
+  "description": "A group items component",
+  "main": "/js/adapt-groupItems.js",
+  "displayName": "Group Items",
+  "keywords": ["adapt-plugin", "adapt-component"],
+  "license": "GPLv3"
+}
