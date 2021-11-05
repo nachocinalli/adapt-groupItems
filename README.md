@@ -5,6 +5,10 @@
 The attributes listed below are used in components.json and are properly formatted as JSON in  [*example.json*](https://github.com/nachocinalli/adapt-groupItems/blob/master/example.json).
 
 ### Attributes
+**_setCompletionOn** (string)  
+
+**_groupActive** (number)
+
 **_groups** (array)
 
 >**title** (string)
@@ -18,6 +22,8 @@ The attributes listed below are used in components.json and are properly formatt
 
 
 **_items** (array)
+
+>**_group** (number)
 
 >**title** (string)
 
