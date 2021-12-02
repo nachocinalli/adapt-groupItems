@@ -8,7 +8,6 @@ export default function GroupItems({
   _groupActive,
   ...props
 }) {
-  console.log(_groupActive);
   return (
     <div className='component__inner groupitems__inner'>
       <templates.header {...props} />
