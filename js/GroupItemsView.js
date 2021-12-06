@@ -16,6 +16,8 @@ class GroupItemsView extends ComponentView {
       this.setupInviewCompletion('.component__widget');
     }
 
+    if (_groupActive === 0) return;
+
     this.model.setActive(this.model.get('_groupActive') - 1);
 
   }
