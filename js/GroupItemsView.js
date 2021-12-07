@@ -28,6 +28,7 @@ class GroupItemsView extends ComponentView {
   onClick(event) {
     const $btn = $(event.currentTarget);
     const itemIndex = $btn.data('index');
+    if (itemIndex === this.model.get('_groupActive')) return;
     this.model.setActive(itemIndex);
   }
 }
