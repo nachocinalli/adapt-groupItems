@@ -8,17 +8,20 @@ class GroupItemsView extends ComponentView {
   }
 
   postRender () {
-
     this.$('.component__widget').imageready(() => {
       this.setReadyStatus();
     });
     if (this.model.get('_setCompletionOn') === 'inview') {
       this.setupInviewCompletion('.component__widget');
     }
-
-    if (_groupActive === 0) return;
-
-    this.model.setActive(this.model.get('_groupActive') - 1);
+    const items = this.model.getChildren();
+    if (!items || !items.length) return;
+    const activeItem = this.model.getActiveItem();
+    if (!activeItem) {
+      this.model.setActive(this.model.get('_groupActive') - 1);
+    } else {
+      items.trigger('change:_isActive', activeItem, true);
+    }
 
   }
 

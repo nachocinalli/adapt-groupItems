@@ -3,7 +3,8 @@ import ItemsComponentModel from 'core/js/models/itemsComponentModel';
 export default class GroupItemsModel extends ItemsComponentModel {
   defaults() {
     return ItemsComponentModel.resultExtend('defaults', {
-      _group: 0
+      _group: 0,
+      _groupActive: null
     });
   }
 
@@ -13,5 +14,4 @@ export default class GroupItemsModel extends ItemsComponentModel {
     itemsGroup.forEach((child, index) => child.set({ _isVisited: true, _isActive: true }));
     this.set('_groupActive', group);
   }
-
 }
