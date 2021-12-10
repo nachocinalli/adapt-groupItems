@@ -7,7 +7,7 @@
 		"ariaRegion": {
 			"type": "string",
 			"required": true,
-			"default": "This component is an vertical items.",
+			"default": "This component is an group items.",
 			"inputType": "Text",
 			"validators": [],
 			"translatable": true
