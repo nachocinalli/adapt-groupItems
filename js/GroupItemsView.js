@@ -4,7 +4,6 @@ class GroupItemsView extends ComponentView {
 
   preRender() {
     this.onClick = this.onClick.bind(this);
-    this.listenTo(this.model.getChildren(), 'change:_isActive', this.onItemsActiveChange);
   }
 
   postRender () {
