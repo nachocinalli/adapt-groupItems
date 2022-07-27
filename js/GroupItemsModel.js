@@ -1,17 +1,20 @@
 import ItemsComponentModel from 'core/js/models/itemsComponentModel';
-
+import ItemModel from 'core/js/models/itemModel';
 export default class GroupItemsModel extends ItemsComponentModel {
   defaults() {
     return ItemsComponentModel.resultExtend('defaults', {
-      _group: 0,
       _groupActive: null
     });
   }
 
-  setActive(group) {
-    this.resetActiveItems();
-    const itemsGroup = this.getChildren().filter({ _group: group + 1 });
-    itemsGroup.forEach((child, index) => child.set({ _isVisited: true, _isActive: true }));
-    this.set('_groupActive', group);
+  setUpItems() {
+    const items = this.get('_items') || [];
+    items.forEach((item, index) => (item._index = index));
+    this.set('_groupItems', items);
+
+    const groups = this.get('_groups') || [];
+    groups.forEach((group, index) => (group._index = index));
+    this.setChildren(new Backbone.Collection(groups, { model: ItemModel }));
+
   }
 }

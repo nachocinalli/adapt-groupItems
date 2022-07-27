@@ -10,7 +10,6 @@
   "body": "This is optional body text.",
   "instruction": "This is the instruction text.",
   "_setCompletionOn": "allItems",
-  "_groupActive": 1,
   "_groups": [
     {
       "title": "Group 1",

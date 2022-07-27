@@ -30,19 +30,7 @@
 			"help": "This is the instruction text",
 			"translatable": true
 		},
-		"_groupActive": {
-			"type": "number",
-			"required": true,
-			"default": 1,
-			"isSetting": true,
-			"title": "Group active",
-			"inputType": "Number",
-			"validators": [
-				"number"
-			],
-			"help": "Set initial state"
-		},
-
+		
 		"_setCompletionOn": {
 			"type": "string",
 			"required": true,

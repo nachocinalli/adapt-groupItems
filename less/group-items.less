@@ -1,26 +1,41 @@
 .groupitems {
   &__container-groups {
-    display: flex;
     margin-bottom: 1rem;
   }
+
   &__group {
     margin-right: 1rem;
+    background-color: @item-color;
+    color: @item-color-inverted;
+
+    &.is-visited {
+      background-color: @visited;
+      color: @visited-inverted;
+    }
+
     &.is-active {
-      background-color: @black;
-      color: @white;
+      background-color: @item-color-selected;
+      color: @item-color-inverted-selected;
+    }
+
+    & > * {
+      pointer-events: none;
     }
   }
+
   &__container-items {
-    display: flex;
-    flex-direction: column;
-  }
-  &__item {
     display: none;
-    margin-right: 1rem;
+    flex-direction: column;
+
     &.is-active {
-      display: block;
+      display: flex;
     }
   }
+
+  &__item {
+    margin-right: 1rem;
+  }
+
   @media (min-width: @device-width-large) {
     &__container-items {
       flex-direction: row;

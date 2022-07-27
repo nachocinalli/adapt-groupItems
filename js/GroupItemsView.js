@@ -1,9 +1,11 @@
 import ComponentView from 'core/js/views/componentView';
-
+import a11y from 'core/js/a11y';
 class GroupItemsView extends ComponentView {
 
   preRender() {
-    this.onClick = this.onClick.bind(this);
+    this.reset();
+    this.listenTo(this.model.get('_children'), 'change:_isActive', this.onItemsActiveChange);
+    this.setActive = this.setActive.bind(this);
   }
 
   postRender () {
@@ -13,22 +15,28 @@ class GroupItemsView extends ComponentView {
     if (this.model.get('_setCompletionOn') === 'inview') {
       this.setupInviewCompletion('.component__widget');
     }
-    const items = this.model.getChildren();
-    if (!items || !items.length) return;
-    const activeItem = this.model.getActiveItem();
-    if (!activeItem) {
-      this.model.setActive(this.model.get('_groupActive') - 1);
-    } else {
-      items.trigger('change:_isActive', activeItem, true);
-    }
-
   }
 
-  onClick(event) {
-    const $btn = $(event.currentTarget);
-    const itemIndex = $btn.data('index');
-    if (itemIndex === this.model.get('_groupActive')) return;
-    this.model.setActive(itemIndex);
+  onItemsActiveChange(item, isActive) {
+    if (!isActive) return;
+    this.model.set('_groupActive', item.get('_index'));
+    item.toggleVisited(true);
+  }
+
+  reset() {
+    this.model.resetActiveItems();
+    this.model.set('_groupActive', 0);
+    const firstItem = this.model.getItem(this.model.get('_groupActive'));
+
+    if (!firstItem) return;
+    firstItem.toggleActive(true);
+    firstItem.toggleVisited(true);
+  }
+
+  setActive(index) {
+    this.model.setActiveItem(index);
+    const button = document.getElementById(`${this.model.get('_id')}-button-${index}`);
+    a11y.focus(button);
   }
 }
 

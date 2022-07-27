@@ -33,12 +33,6 @@
           "enum": ["inview", "allItems"],
           "_backboneForms": "Select"
         },
-        "_groupActive": {
-          "type": "number",
-          "title": "Group active",
-          "description": "Set initial state. Use 1 to the first group.",
-          "default": 1
-        },
         "_groups": {
           "type": "array",
           "title": "Groups",
